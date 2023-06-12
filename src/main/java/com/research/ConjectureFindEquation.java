@@ -29,8 +29,8 @@ public class ConjectureFindEquation {
         System.out.println("*************Conjucture Starts*************");
         ConjectureFindEquation con = new ConjectureFindEquation();
         con.performEquation(x);
-        while (conjuctureFailed && divider <= 9) {
-            while (conjuctureFailed && followerAddition <= 9) {
+        while (conjuctureFailed && divider <= 20) {
+            while (conjuctureFailed && followerAddition <= 20) {
                 hmap.clear();
                 con.performEquation(x);
                 followerAddition++;
@@ -63,6 +63,7 @@ public class ConjectureFindEquation {
                 if (carrier <= 0) {
                     System.out.println("*************Conjucture Failed - Switching Equation" + intiator + "x" + " + " + (followerAddition + 1) + " AND Dividing Rule is = " + divider + "*************");
                     conjuctureFailed = true;
+                    loopInitialValue = 1;
                     break;
                 }
                 if ((carrier % divider) == 0) {
